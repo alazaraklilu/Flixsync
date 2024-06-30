@@ -1,32 +1,49 @@
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const webpack = require('webpack');
 
 module.exports = {
-    entry: './src/index.js', // Entry point for your application
+    entry: ['./src/index.js', 'webpack-hot-middleware/client'],
     output: {
-        filename: 'bundle.js', // Name of the output file
-        path: path.resolve(__dirname, 'dist') // Output directory
+        filename: 'bundle.js',
+        path: path.resolve(__dirname, 'dist'),
+        publicPath: '/'
     },
     module: {
         rules: [
             {
-                test: /\.js$/, // Apply this rule to all .js files
-                exclude: /node_modules/, // Exclude the node_modules directory
+                test: /\.(js|jsx)$/,
+                exclude: /node_modules/,
                 use: {
-                    loader: 'babel-loader', // Use Babel to transpile JavaScript files
+                    loader: 'babel-loader',
                     options: {
-                        presets: ['@babel/preset-env'] // Presets for Babel
+                        presets: ['@babel/preset-env', '@babel/preset-react']
                     }
                 }
             },
             {
-                test: /\.css$/, // Apply this rule to all .css files
-                use: ['style-loader', 'css-loader'] // Use these loaders for CSS files
+                test: /\.css$/,
+                use: ['style-loader', 'css-loader']
+            },
+            {
+                test: /\.html$/,
+                use: ['html-loader']
             }
         ]
     },
+    resolve: {
+        extensions: ['.js', '.jsx'],
+    },
+    plugins: [
+        new HtmlWebpackPlugin({
+            template: './src/index.html'
+        }),
+        new webpack.HotModuleReplacementPlugin()
+    ],
     devServer: {
-        contentBase: path.join(__dirname, 'dist'), // Serve files from the dist directory
-        compress: true, // Enable gzip compression
-        port: 9000 // Serve on port 9000
+        // contentBase: path.join(__dirname, 'dist'),
+        hot: true,
+        historyApiFallback: true,
+        port: 3000
     }
 };
