@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
 
 module.exports = {
+    mode: 'development',
     entry: ['./src/index.js', 'webpack-hot-middleware/client'],
     output: {
         filename: 'bundle.js',
@@ -36,7 +37,6 @@ module.exports = {
         modules: [
             'node_modules',
             path.resolve(__dirname, 'src')
-
         ],
     },
     plugins: [
@@ -49,6 +49,6 @@ module.exports = {
     devServer: {
         hot: true,
         historyApiFallback: true,
-        port: 3000
+        port: 8000
     }
 };

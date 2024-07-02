@@ -1,12 +1,11 @@
 import React from 'react';
-import Login from './Components/Login/Login';
+import Login from './Components/A.Login';
 
 const App = () => {
 
     return (
 
         <div>
-            <h1>Flixsync</h1>
             <Login />
         </div >
     );

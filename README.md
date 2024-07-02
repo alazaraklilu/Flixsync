@@ -32,3 +32,26 @@ Upcoming releases page
 Previously watched page 
 Promotions page 
 
+
+
+# Webpack Notes:
+
+Entry: The starting point of the application (e.g., ./src/index.js).
+
+Output: Specifies where to output the bundled files and their filenames (e.g., dist/bundle.js).
+
+Loaders: Transformations applied to the source files (e.g., babel-loader for JavaScript, css-loader for CSS).
+
+Plugins: Extend or customize Webpack's behavior (e.g., HtmlWebpackPlugin for HTML file generation, HotModuleReplacementPlugin for hot module replacement).
+
+Mode: Specifies the build mode (development, production, or none), which affects optimizations and output.
+
+Module: Contains the rules for how different file types should be processed (e.g., test for .js files, use babel-loader).
+
+Resolve: Defines how Webpack resolves module requests (e.g., extensions like .js, .jsx). Simplifies module import paths and ensures Webpack can find and bundle modules correctly without manual configuration for each import.
+
+DevServer: Configuration for Webpack's development server (e.g., hot for hot module replacement, port for the server port).
+
+# HM Reloading vs. HM Replacement: 
+Replacement specifically refers to swapping out the changed modules.
+Reloading can refer to the overall process of updating code changes without a full page refresh, which includes HMR.
