@@ -33,15 +33,20 @@ module.exports = {
     },
     resolve: {
         extensions: ['.js', '.jsx'],
+        modules: [
+            'node_modules',
+            path.resolve(__dirname, 'src')
+
+        ],
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: './src/index.html'
+            template: './src/index.html',
+            inject: 'body',
         }),
         new webpack.HotModuleReplacementPlugin()
     ],
     devServer: {
-        // contentBase: path.join(__dirname, 'dist'),
         hot: true,
         historyApiFallback: true,
         port: 3000
