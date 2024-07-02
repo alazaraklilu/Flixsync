@@ -1,11 +1,15 @@
 {
   "devDependencies": {
+    "html-loader": "^5.0.0",
+    "nodemon": "^3.1.4",
     "webpack-cli": "^5.1.4",
     "webpack-dev-server": "^5.0.4"
   },
   "scripts": {
     "build": "webpack --mode production",
-    "start": "webpack serve --mode development"
+    "webpack-dev": "webpack serve --mode development",
+    "start": "nodemon server.js",
+    "dev": "webpack serve --mode development & nodemon server.js"
   },
   "dependencies": {
     "@babel/core": "^7.24.7",

@@ -1,5 +1,4 @@
 import React from 'react';
-import './LoginForm.css';
 
 const Login = () => {
 
@@ -18,8 +17,8 @@ const Login = () => {
                 <button type="submit">Sign Up</button>
             </form >
         </div >
-    )
+    );
 
-}
+};
 
 export default Login;

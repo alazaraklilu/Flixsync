@@ -1,4 +1,5 @@
 import React from 'react';
+import Login from './Components/Login/Login';
 
 const App = () => {
 
@@ -6,6 +7,7 @@ const App = () => {
 
         <div>
             <h1>Flixsync</h1>
+            <Login />
         </div >
     );
 };
