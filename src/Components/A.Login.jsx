@@ -5,7 +5,7 @@ const Login = () => {
     return (
 
         <div>
-            <h1 className="heading">Flixsync</h1>
+            <h1 className="heading">Flixwe</h1>
             <h5 className="subheading">Moviegoing with friends, made easy.</h5>
             <div className='wrapper'>
                 <form action="">
@@ -15,12 +15,12 @@ const Login = () => {
                     <div className="input-box">
                         <input type="text" placeholder="Password" required />
                     </div>
-                    <button type="submit" className="button">Login</button>
-                    <button type="submit" className="button">Sign Up</button>
-
+                    <div className="button-group">
+                        <button type="submit" className="button">Login</button>
+                        <button type="submit" className="button">Sign Up</button>
+                    </div>
                     <div className="reset-text">
-
-                        <h6>Forgot password? Reset here</h6>
+                        <h6 id="reset-text">Forgot password? <b>Reset here</b></h6>
 
                     </div>
                 </form >
