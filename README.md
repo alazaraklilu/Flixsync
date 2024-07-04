@@ -55,3 +55,10 @@ DevServer: Configuration for Webpack's development server (e.g., hot for hot mod
 # HM Reloading vs. HM Replacement: 
 Replacement specifically refers to swapping out the changed modules.
 Reloading can refer to the overall process of updating code changes without a full page refresh, which includes HMR.
+
+Database Setup steps: 
+
+- Install and configure Sequelize to connect to your PostgreSQL database.
+- Define models and run migrations to set up your database schema.
+- Integrate Sequelize into your existing Express server.
+- Create routes to handle database operations and use them in your Express app.

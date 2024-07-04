@@ -13,8 +13,9 @@ const { Model, DataTypes } = require('sequelize');
 //     }
 //   }
 
-User.init({
-    {
+User.init(
+
+  {
     userId: {
       type: DataTypes.INTEGER,
       autoIncrement: true,
