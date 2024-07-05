@@ -62,3 +62,14 @@ Database Setup steps:
 - Define models and run migrations to set up your database schema.
 - Integrate Sequelize into your existing Express server.
 - Create routes to handle database operations and use them in your Express app.
+
+
+#  Axios is a library used to make HTTP requests from the browser or Node.js, simplifying API interactions.
+
+# Prop-types is a library that allows you to specify the type and shape of props that a component should receive, helping to catch bugs and provide documentation for component properties.
+
+# e.preventDefault(); stops the default action of an event, typically used in form submission to prevent the page from reloading.
+
+# useState: Manages state in functional components. Returns a state variable and a function to update it.
+
+# useEffect: Handles side effects in functional components. Runs code after render, similar to lifecycle methods.

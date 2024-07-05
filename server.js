@@ -4,7 +4,8 @@ const webpack = require('webpack');
 const webpackDevMiddleware = require('webpack-dev-middleware');
 const webpackHotMiddleware = require('webpack-hot-middleware');
 const config = require('./webpack.config.js');
-const { sequelize } = require('./models');
+const { sequelize } = require('./src/Backend/C.models.js');
+const userRoutes = require('./src/Backend/A.routes.js'); // Adjust the path as necessary
 require('dotenv').config();
 
 const app = express();
@@ -24,16 +25,15 @@ app.use(express.urlencoded({ extended: true }));
 // Static Files
 app.use(express.static(path.join(__dirname, 'dist')));
 
-// API Routes (example)
-// const userRoutes = require('./routes/userRoutes');
-// app.use('/api/users', userRoutes);
+// API Routes
+app.use('/api/users', userRoutes);
 
 // Catch-all Route to Serve React App
 app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, 'dist', 'index.html'));
 });
 
-// Error Handling Middleware (optional)
+// Error Handling Middleware
 app.use((err, req, res, next) => {
     console.error(err.stack);
     res.status(500).send('Something went wrong!');

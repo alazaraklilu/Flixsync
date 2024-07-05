@@ -5,13 +5,13 @@
 // and delegate the processing of these requests to the appropriate controller functions.
 
 const express = require('express');
+const { signUp, login } = require('./B.controllers'); // Ensure correct path to controllers
 const router = express.Router();
 
-// Define routes and map them to controller functions
+// Sign Up Route
+router.post('/signup', signUp);
 
-// Login routes 
+// Login Route
+router.post('/login', login);
 
-router.get('/users', controller)
-router.post('/users', controller)
-router.get('/users/:id', controller)
-router.get('/users/:id', controller)
+module.exports = router;
