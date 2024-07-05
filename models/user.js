@@ -1,22 +1,19 @@
 const { Model, DataTypes } = require('sequelize');
-const sequelize = require('../config/connection'); // Adjust path as necessary
+const sequelize = require('../config/connection'); // Ensure this path is correct
 
 class User extends Model { }
 
 User.init(
-
   {
     userId: {
       type: DataTypes.INTEGER,
       autoIncrement: true,
       primaryKey: true,
     },
-
     username: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-
     email: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -25,28 +22,21 @@ User.init(
         isEmail: true,
       },
     },
-
-    fistName: {
+    firstName: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-
     lastName: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-
     password: {
       type: DataTypes.STRING,
       allowNull: false,
     },
   },
-
   {
-
-    sequelize,
+    sequelize, // Pass the sequelize instance here
     modelName: 'User',
-
-  });
-
-module.exports = User;
+  }
+);

@@ -10,18 +10,36 @@ require('dotenv').config();
 const app = express();
 const compiler = webpack(config);
 
+// Middleware for Webpack
 app.use(webpackDevMiddleware(compiler, {
     publicPath: config.output.publicPath,
 }));
 
 app.use(webpackHotMiddleware(compiler));
 
+// Middleware for Parsing JSON and URL-encoded Data
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+// Static Files
 app.use(express.static(path.join(__dirname, 'dist')));
 
+// API Routes (example)
+// const userRoutes = require('./routes/userRoutes');
+// app.use('/api/users', userRoutes);
+
+// Catch-all Route to Serve React App
 app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, 'dist', 'index.html'));
 });
 
+// Error Handling Middleware (optional)
+app.use((err, req, res, next) => {
+    console.error(err.stack);
+    res.status(500).send('Something went wrong!');
+});
+
+// Sync Database and Start Server
 const PORT = process.env.PORT || 4000;
 sequelize.sync().then(() => {
     app.listen(PORT, () => {
