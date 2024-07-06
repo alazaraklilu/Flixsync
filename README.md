@@ -73,3 +73,32 @@ Database Setup steps:
 # useState: Manages state in functional components. Returns a state variable and a function to update it.
 
 # useEffect: Handles side effects in functional components. Runs code after render, similar to lifecycle methods.
+
+
+# bcrypt 
+
+The line const hashedPassword = await bcrypt.hash(password, 10) is used to securely hash a user's password before storing it in the database. Here's a brief breakdown:
+
+- bcrypt.hash: A function from the bcrypt library that hashes a password.
+- password: The plain text password to be hashed.
+- 10: The number of salt rounds, which determines the complexity and security of the hash.
+- await: Waits for the hashing process to complete asynchronously.
+- hashedPassword: The resulting hashed password that will be stored securely in the database.
+
+In summary, this line hashes the user's password with a specified level of complexity to enhance security before storing it.
+
+# Salt Factor and Salt Rounds
+
+# Salt Factor:
+
+- A random value added to the password before hashing.
+- Ensures that identical passwords produce different hashes.
+- Increases security by protecting against rainbow table attacks.
+
+# Salt Rounds:
+
+- The number of times the hashing algorithm is applied.
+- Higher rounds increase hashing complexity and time.
+- Typically set to a number like 10, balancing security and performance.
+
+In brief, salt adds randomness, and salt rounds increase the difficulty of breaking the hash.

@@ -41,6 +41,7 @@ app.use((err, req, res, next) => {
 
 // Sync Database and Start Server
 const PORT = process.env.PORT || 4000;
+
 sequelize.sync().then(() => {
     app.listen(PORT, () => {
         console.log(`Server is running on http://localhost:${PORT}`);

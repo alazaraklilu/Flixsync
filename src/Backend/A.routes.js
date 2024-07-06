@@ -22,7 +22,7 @@ router.post('/login', (req, res, next) => {
 
 // Homepage route
 router.post('/homepage', (req, res, next) => {
-    console.log('Login Route Hit');
+    console.log('Homepage Route Hit');
     next();
 }, login);
 

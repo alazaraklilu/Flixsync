@@ -8,3 +8,5 @@ const sequelize = new Sequelize(config.database, config.username, config.passwor
 });
 
 module.exports = sequelize;
+
+PGPASSWORD=abc123 psql -h 127.0.0.1 -U aaklilu -d Flixwe
