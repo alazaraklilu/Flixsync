@@ -6,6 +6,51 @@ They define the schema for the data and provide methods for querying and manipul
 Functionality: They abstract the database interactions and provide a clean API for the controllers to use when performing CRUD operations.
 */
 
-const { sequelize, User } = require('../../models');
+const { Sequelize, DataTypes } = require('sequelize');
+require('dotenv').config();
 
-module.exports = { sequelize, User };
+// Create a new Sequelize instance
+const sequelize = new Sequelize(process.env.DATABASE_URL, {
+    dialect: 'postgres', // or 'mysql', 'sqlite', etc. depending on your database
+    logging: false, // set to true if you want to see SQL queries
+});
+
+// Define the User model
+const User = sequelize.define('User', {
+    username: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        unique: true,
+    },
+    email: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        unique: true,
+    },
+    firstName: {
+        type: DataTypes.STRING,
+        allowNull: false,
+    },
+    lastName: {
+        type: DataTypes.STRING,
+        allowNull: false,
+    },
+    password: {
+        type: DataTypes.STRING,
+        allowNull: false,
+    },
+});
+
+// Test the database connection and sync models
+(async () => {
+    try {
+        await sequelize.authenticate();
+        console.log('Connection has been established successfully.');
+        await sequelize.sync();
+        console.log('Models synchronized successfully.');
+    } catch (error) {
+        console.error('Unable to connect to the database:', error);
+    }
+});
+
+module.exports = { User, sequelize };

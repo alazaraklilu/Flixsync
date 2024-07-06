@@ -2,26 +2,25 @@ import React, { useState } from 'react';
 import axios from 'axios';
 
 const Login = () => {
-
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    const [error, setError] = useState('');
 
     const handleLogin = async (e) => {
-
         e.preventDefault();
         try {
             const response = await axios.post('/api/users/login', { username, password });
-            console.log(response.data);
-            // Handle successful login, e.g., store token, redirect user, etc.
+            if (response.data.token) {
+                // Redirect to homepage on successful login
+                window.location.href = '/homepage';
+            }
         } catch (error) {
-            console.error('Login error', error);
-            // Handle login error
+            // Display error message on login failure
+            setError('Invalid username or password');
         }
-
     };
 
     return (
-
         <div>
             <h1 className="heading">Flixwe</h1>
             <h5 className="subheading">Moviegoing with friends, made easy.</h5>
@@ -45,6 +44,7 @@ const Login = () => {
                             required
                         />
                     </div>
+                    {error && <p style={{ color: 'red' }}>{error}</p>}
                     <div className="button-group">
                         <button type="submit" className="button">Login</button>
                         <button type="button" className="button" onClick={() => window.location.href = '/signup'}>Sign Up</button>

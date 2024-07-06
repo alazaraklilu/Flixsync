@@ -10,7 +10,6 @@ const bcrypt = require('bcrypt');
 const { User } = require('../../models');
 const jwt = require('jsonwebtoken');
 
-// Function to handle user sign-up
 const signUp = async (req, res) => {
     const { username, email, firstName, lastName, password } = req.body;
 
@@ -30,7 +29,6 @@ const signUp = async (req, res) => {
     }
 };
 
-// Function to handle user login
 const login = async (req, res) => {
     const { username, password } = req.body;
 
@@ -52,5 +50,6 @@ const login = async (req, res) => {
         res.status(500).json({ error: error.message });
     }
 };
+
 
 module.exports = { signUp, login };

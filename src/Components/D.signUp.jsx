@@ -2,35 +2,28 @@ import React, { useState } from 'react';
 import axios from 'axios';
 
 const signUp = () => {
-
     const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
     const [password, setPassword] = useState('');
+    const [error, setError] = useState('');
 
     const handleSignUp = async (e) => {
-
         e.preventDefault();
-
         try {
-
-            const response = await axios.post('/api/users/signup', {
-
+            await axios.post('/api/users/signup', {
                 username,
                 email,
                 firstName,
                 lastName,
                 password,
-
             });
-
-            console.log(response.data);
+            // Redirect to login page on successful sign up
             window.location.href = '/login';
-
         } catch (error) {
-
-            console.error('Error signing up', error);
+            // Display error message on sign up failure
+            setError('Error signing up. Please try again.');
         }
     };
 
@@ -85,6 +78,7 @@ const signUp = () => {
                             required
                         />
                     </div>
+                    {error && <p style={{ color: 'red' }}>{error}</p>}
                     <div className="button-group">
                         <button type="submit" className="button">Sign Up</button>
                     </div>

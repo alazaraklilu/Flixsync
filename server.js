@@ -4,8 +4,8 @@ const webpack = require('webpack');
 const webpackDevMiddleware = require('webpack-dev-middleware');
 const webpackHotMiddleware = require('webpack-hot-middleware');
 const config = require('./webpack.config.js');
-const { sequelize } = require('./src/Backend/C.models.js');
-const userRoutes = require('./src/Backend/A.routes.js'); // Adjust the path as necessary
+const { sequelize } = require('./src/Backend/C.models');
+const userRoutes = require('./src/Backend/A.routes'); // Adjust the path as necessary
 require('dotenv').config();
 
 const app = express();

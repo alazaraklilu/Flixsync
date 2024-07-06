@@ -8,10 +8,15 @@ const express = require('express');
 const { signUp, login } = require('./B.controllers'); // Ensure correct path to controllers
 const router = express.Router();
 
-// Sign Up Route
-router.post('/signup', signUp);
+router.post('/signup', (req, res, next) => {
+    console.log('Sign Up Route Hit');
+    next();
+}, signUp);
 
 // Login Route
-router.post('/login', login);
+router.post('/login', (req, res, next) => {
+    console.log('Login Route Hit');
+    next();
+}, login);
 
 module.exports = router;
