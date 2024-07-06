@@ -30,7 +30,7 @@ const signUp = () => {
     return (
         <div>
             <h1 className="heading">Flixwe</h1>
-            <h5 className="subheading">Join us and start watching movies with friends.</h5>
+            <h5 className="subheading">Simplify your moviegoing experience. Sign up below.</h5>
             <div className='wrapper'>
                 <form onSubmit={handleSignUp}>
                     <div className="input-box">

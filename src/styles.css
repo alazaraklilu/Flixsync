@@ -98,33 +98,52 @@ body {
 
 .homepage {
     display: flex;
-    justify-content: space-around;
-    margin: 20px;
+    flex-wrap: wrap;
+    gap: 2.5rem;
+    /* Spacing between cards */
+    justify-content: center;
+    /* Center the cards */
+    padding: 50px;
+    /* Optional: Add padding around the container */
+    overflow-y: auto;
+    /* Enable vertical scrolling */
+    max-height: 100vh;
+    /* Ensure it doesn't exceed the viewport height */
 }
 
 .card {
-    width: 300px;
-    border: 1px solid #ccc;
+    color: white;
+    /* Change text color to white */
+    background-color: #000000;
+    /* Optional: Dark background for better contrast */
+    padding: 1.5rem;
     border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: #070D29;
+    width: 250px;
+    /* Adjust the width as needed */
+    text-align: center;
+    /* Center align text */
+    margin: 25px;
+    margin-bottom: 5rem;
+    /* margin-bottom: 50px; */
+    /* Optional: Add margin at the bottom */
 }
 
-.card-image {
+.card img {
     width: 100%;
-    height: auto;
-}
-
-.card-content {
-    padding: 15px;
+    border-radius: 10px;
 }
 
 .card-title {
-    margin: 0;
-    font-size: 1.5em;
+    font-size: .8rem;
+    font-weight: bolder;
+    margin-top: 1rem;
 }
 
 .card-rating,
-.card-runtime {
-    margin: 5px 0;
+.card-runtime,
+.card-release {
+    font-size: .65rem;
+    margin-top: 0.5rem;
 }

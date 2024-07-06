@@ -7,7 +7,7 @@ Functionality: They act as an intermediary between the routers and models, ensur
 */
 
 const bcrypt = require('bcrypt');
-const { User } = require('../../models');
+const { User } = require('./C.models');
 const jwt = require('jsonwebtoken');
 
 const signUp = async (req, res) => {
