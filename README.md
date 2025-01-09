@@ -5,7 +5,7 @@
 [![License](https://img.shields.io/badge/License-MIT-008CBA)](#)
 [![Contributions](https://img.shields.io/badge/Contributions-Welcome-FFD700)](#)
 
-Flixwe is a full-stack application designed to streamline the movie-going experience. By combining event scheduling, calendar integration, and seamless payment processing, Flixwe offers a one-stop platform for planning and enjoying movie nights with ease.
+Flixsync is a full-stack application designed to streamline the movie-going experience. By combining event scheduling, calendar integration, and seamless payment processing, Flixsync offers a one-stop platform for planning and enjoying movie nights with ease.
 
 ---
 
@@ -22,9 +22,13 @@ Flixwe is a full-stack application designed to streamline the movie-going experi
 
 ---
 
-## Features
+## Screenshots
 
-- **Event Scheduling:** Plan movie events with customizable dates and times.
-- **Calendar Integration:** Sync events seamlessly with your calendar.
-- **Payment Processing:** Secure and streamlined payment handling for bookings.
-- **Responsive Design:** Optimized for desktop and mobile devices.
+### Homepage
+![Homepage](./src/assets/Flixsync_homepage.png)
+
+### Signup Page
+![Signup](./src/assets/Flixsync_signup.png)
+
+### Main Page
+![Main](./src/assets/Flixsync_main.png)

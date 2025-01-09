@@ -22,7 +22,7 @@ const Login = () => {
 
     return (
         <div>
-            <h1 className="heading">Flixwe</h1>
+            <h1 className="heading">Flixsync</h1>
             <h5 className="subheading">Moviegoing with friends, made easy.</h5>
             <div className='wrapper'>
                 <form onSubmit={handleLogin}>
