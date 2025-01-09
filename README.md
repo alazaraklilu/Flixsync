@@ -25,10 +25,10 @@ Flixsync is a full-stack application designed to streamline the movie-going expe
 ## Screenshots
 
 ### Homepage
-![Homepage](src/assets/Flixsync_homepage.png)
+![Homepage](src/Assets/Flixsync_homepage.png)
 
 ### Signup Page
-![Signup](src/assets/Flixsync_signup.png)
+![Signup](src/Assets/Flixsync_signup.png)
 
 ### Main Page
-![Main](src/assets/Flixsync_main.png)
+![Main](src/Assets/Flixsync_main.png)
