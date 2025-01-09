@@ -1,4 +1,5 @@
-# Flixwe
+![Flixsync logo](https://github.com/user-attachments/assets/910704e8-0bd2-4bfe-b90d-934fc40c808a)
+
 ## About
 
 [![License](https://img.shields.io/badge/License-MIT-008CBA)](#)
