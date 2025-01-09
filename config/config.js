@@ -27,23 +27,3 @@ module.exports = {
   },
 };
 
-/*
- The config.js file stores the root owner's 
- database credentials (or other necessary credentials) 
- for different environments, ensuring the application can 
- connect to the correct database using those credentials.
-*/
-
-/*
-Environment Variables: These are variables that are set outside of your application code, 
-often through a configuration file or the operating system's environment settings. 
-They provide a way to manage configuration settings and sensitive 
-information like database credentials without hardcoding them into your source code.
-*/
-
-/*
-process.env Object: In Node.js, the process.env object 
-is a global object that provides access to the environment variables. 
-By using process.env.VARIABLE_NAME, 
-you can retrieve the value of an environment variable.
-*/

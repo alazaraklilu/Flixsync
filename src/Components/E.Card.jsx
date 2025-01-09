@@ -8,11 +8,16 @@ const formatDate = (dateString) => {
 
 const Card = ({ title, rating, release, runtime, image }) => {
     return (
+
         <div className="card">
             <img src={image} alt={title} />
             <div className="card-title">{title}</div>
             <div className="card-rating"><b>Rating: </b>{Math.round(rating * 10) / 10 || 'N/A'}</div>
             <div className="card-release"><b>Release: </b>{formatDate(release)}</div>
+            <div className="card-buttons">
+                <button className="card-button">Buy Tickets</button>
+                <button className="card-button">Invite</button>
+            </div>
         </div>
     );
 };

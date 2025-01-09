@@ -97,6 +97,7 @@ body {
 }
 
 .homepage {
+    position: relative;
     display: flex;
     flex-wrap: wrap;
     gap: 2.5rem;
@@ -109,6 +110,45 @@ body {
     /* Enable vertical scrolling */
     max-height: 100vh;
     /* Ensure it doesn't exceed the viewport height */
+}
+
+/* .profile-icon {
+
+    background-image: url(Assets/Profile\ Icon.jpg);
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    align-items: center;
+    margin-left: 60px;
+    margin-top: 10px;
+    z-index: 1000;
+
+} */
+
+.top-buttons {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-left: 165px;
+    margin-top: 10px;
+    z-index: 1000;
+}
+
+.top-button {
+
+    background: linear-gradient(to right, #8DC63F, #12E1B9);
+    color: #2D3C42;
+    font-weight: bolder;
+    border: none;
+    padding: 8px 15px;
+    margin-bottom: 100px;
+    margin-right: 25px;
+    border-radius: 8px;
+    cursor: pointer;
+
 }
 
 .card {
@@ -125,7 +165,9 @@ body {
     text-align: center;
     /* Center align text */
     margin: 25px;
+    margin-top: 80px;
     margin-bottom: 5rem;
+    position: relative;
     /* margin-bottom: 50px; */
     /* Optional: Add margin at the bottom */
 }
@@ -146,4 +188,28 @@ body {
 .card-release {
     font-size: .65rem;
     margin-top: 0.5rem;
+}
+
+.card-buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.card-button {
+    background: linear-gradient(to right, #8DC63F, #12E1B9);
+    color: #2D3C42;
+    font-weight: bolder;
+    border: none;
+    padding: 5px 15px;
+    border-radius: 5px;
+    margin-top: 2rem;
+    text-transform: uppercase;
+    font-size: x-small;
+    cursor: pointer;
+    flex: 1;
+    margin-right: 25px;
+}
+
+.card-button:last-child {
+    margin-right: 0;
 }

@@ -1,5 +1,5 @@
 const { Model, DataTypes } = require('sequelize');
-const sequelize = require('../config/connection'); // Ensure this path is correct
+const sequelize = require('../config/connection');
 
 class User extends Model { }
 
@@ -36,7 +36,7 @@ User.init(
     },
   },
   {
-    sequelize, // Pass the sequelize instance here
+    sequelize,
     modelName: 'User',
   }
 );

@@ -1,4 +1,4 @@
-# Flixsync
+# Flixwe
 Moviegoing with friends, made easy.
 
 

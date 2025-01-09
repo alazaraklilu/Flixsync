@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Card from './E.Card'; // Ensure this path is correct
 // import './styles.css'; // Import the main CSS file
+// import img from 'Assets/Profile Icon.jpg';
 
 const Homepage = () => {
     const [movies, setMovies] = useState([]);
@@ -25,8 +26,14 @@ const Homepage = () => {
     }, []);
 
 
+
     return (
         <div className="homepage">
+            <div className="top-buttons">
+                <button className="top-button">Watched</button>
+                <button className="top-button">Calendly</button>
+                <button className="top-button">Promotions</button>
+            </div>
             {movies.map((movie) => (
                 <Card
                     key={movie.id}
@@ -39,6 +46,7 @@ const Homepage = () => {
         </div>
     );
 };
+
 
 export default Homepage;
 

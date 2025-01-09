@@ -43,37 +43,3 @@ db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 
 module.exports = db;
-
-/*
-
-Enables strict mode:
-
-Ensures stricter parsing and error handling in the code.
-Imports necessary modules:
-
-fs: For file system operations.
-path: For handling and transforming file paths.
-Sequelize: ORM for SQL databases.
-process: Provides information about the current Node.js process.
-Determines environment:
-
-Sets the environment to development by default if NODE_ENV is not specified.
-Loads configuration:
-
-Imports database configuration based on the environment from config.js.
-Initializes Sequelize:
-
-Creates a Sequelize instance using the database configuration.
-Loads all models:
-
-Reads the current directory for files ending in .js (excluding the current file and test files).
-Requires each model file and initializes it with Sequelize.
-Associates models:
-
-Checks each model for associations and sets them up if they exist.
-Exports the database object:
-
-Includes the Sequelize instance and all initialized models for use elsewhere in the application.
-These points summarize the key operations performed by the code in index.js.
-
-*/
